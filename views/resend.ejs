@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> Resend Verification </title>
+  <link rel="stylesheet" src="/css/resend.css" />
+</head>
+<body>
+  <main class="main">
+    <div class="div1 divs">
+      <h1> Invalid or Expired Verification Link! </h1>
+      <p> This link is invalid or expired. Request Resend on the form below: </p>
+    </div>
+    <div class="div2 divs">
+      <form action="/api/resend-verification-link" method="post">
+        <label for="email"> Email: </label>
+        <div class="input_btn_div">
+          <input type="email" name="email" id="email" required >
+          <button id="btn" class="btn"> Resend Verification </button>
+        </div>
+      </form>
+    </div>
+  </main>
+</body>
+</html>

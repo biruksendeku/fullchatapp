@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> Chat App </title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      height: 100vh;
+      width: 100vw;
+      display: grid;
+      place-content: center;
+    }
+    .main {
+      height: 80vh;
+      width: 90vw;
+      display: flex;
+      flex: 1;
+      flex-flow: column nowrap;
+      justify-content: space-between;
+      align-items: center;
+      border: 2px solid #000;
+      border-radius: 7px;
+    }
+    #msgs {
+      background-color: #eee;
+      height: 65vh;
+      width: 88vw;
+      padding: 5px;
+      color: #fff;
+      overflow: scroll;
+    }
+    #msgs div {
+      width: 86vw;
+      height: 2.5rem;
+      padding: 5px 12px;
+      background-color: #4929e3;
+      margin: 5px 0;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      font-weight: 550;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    #msgs div:nth-child(2n) {
+      background-color: #8d50ff;
+    }
+    .forms {
+      display: flex;
+      width: 90vw;
+      padding: 15px;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+      flex: 1;
+      gap: 10px;
+    }
+    label {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #000;
+    }
+    #label1 {
+      flex: 2;
+    }
+    #label2 {
+      flex: 2;
+    }
+    #message {
+      flex: 6;
+      padding: 0.3rem;
+      border: 1.75px solid #000;
+      border-radius: 5px;
+    }
+    #room {
+      flex: 6;
+      padding: 0.3rem;
+      border: 1.75px solid #000;
+      border-radius: 5px;
+    }
+    .btns {
+      flex: 2;
+      outline: 0;
+      border: 0;
+      font-size: 1.5rem;
+      font-weight: 700;
+      background-color: dodgerblue;
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 8px;
+    }
+    #btn2 {
+      background-color: tomato;
+    }
+  </style>
+</head>
+<body>
+  <main class="main">
+    <!-- PART 2 -->
+    <div id="msgs">
+    </div>
+    
+    <!-- PART 1 -->
+    <div class="inputDiv">
+      <!-- form handler 1 -->
+      <div id="div1" class="divs">
+        <form class="forms" id="form1">
+          <label id="label1" for="message"> Message: </label>
+          <input type="text" id="message" name="message" />
+          <input type="submit" id="btn1" class="btns" value="Message" />
+        </form>
+      </div>
+      <!-- form handler 2 -->
+      <div id="div2" class="divs">
+        <!--<form class="forms" id="form2">
+          <label id="label2" for="room"> Room: </label>
+          <input type="text" id="room" name="room" />
+          <input type="submit" id="btn2" class="btns" value="Join" />
+        </form>-->
+        <button id="btn2" class="btns" type="button"> Disconnect </button>
+      </div>
+    </div>
+  </main>
+  <script defer src="/socket.io/socket.io.js"></script>
+  <script defer src="js/script.js"></script>
+</body>
+</html>

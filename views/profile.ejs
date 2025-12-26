@@ -1,0 +1,41 @@
+<style>
+
+.email__place {
+	text-align: center;
+	background-color: dodgerblue;
+	color: #fff;
+	display: inline;
+	border-radius: 8px;
+	padding: 5px;
+	font-size: 1.1rem;
+	font-weight: 600;
+}
+.chat {
+	font-size: 1.5rem;
+	font-weight: 600;
+	background-color: green;
+	color: #fff;
+	padding: 10px;
+	border-radius: 6px;
+	text-decoration: underline 2px solid #fff;
+}
+
+</style>
+
+<% if(user) { %>
+	<p class="email__place"><%= user.email %> </p>
+
+	<h1 style="text-align: center; color: green;"> Profile Access Granted! </h1>
+
+	<br><hr><br>
+
+	<h2 style="text-align: center; color: tomato;"> Welcome <%= user.name %> </h2>
+<% } else{ %>
+	<h1 style="text-align: center; color: green;"> Profile Access Grented!</h1>
+<% } %>
+<br><hr><br>
+
+<a href="/chat" class="chat"> Start Chat </a>
+
+<br><hr><br>
+<a href="/logout" style="font-size: 1.5rem; font-weight: 600;"> Logout </a>
